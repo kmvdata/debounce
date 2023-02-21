@@ -1,8 +1,12 @@
-# Go Debounce
+package debounce
 
-## Example
-
-```go
+import (
+	"fmt"
+	"math/rand"
+	"strconv"
+	"testing"
+	"time"
+)
 
 func TestDebounce(t *testing.T) {
 	count := 0
@@ -23,8 +27,3 @@ func TestDebounce(t *testing.T) {
 	time.Sleep(3 * time.Second)
 	fmt.Println("debouncedFunc called times：" + strconv.Itoa(callTimes))
 }
-
-```
-
-
-
