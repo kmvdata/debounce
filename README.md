@@ -8,7 +8,7 @@ func TestDebounce(t *testing.T) {
 	count := 0
 	callTimes := 0
 
-	debouncedFunc := debounce(15*time.Millisecond, func() {
+	debouncedFunc := debounce.Debounce(15*time.Millisecond, func() {
 		callTimes++
 		fmt.Println("Debounced Function: " + strconv.Itoa(callTimes) + " => " + strconv.Itoa(count))
 	})
