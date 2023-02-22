@@ -12,7 +12,7 @@ func TestDebounce(t *testing.T) {
 	count := 0
 	callTimes := 0
 
-	debouncedFunc := debounce(15*time.Millisecond, func() {
+	debouncedFunc := Debounce(15*time.Millisecond, func() {
 		callTimes++
 		fmt.Println("Debounced Function: " + strconv.Itoa(callTimes) + " => " + strconv.Itoa(count))
 	})
@@ -24,6 +24,5 @@ func TestDebounce(t *testing.T) {
 		time.Sleep(time.Duration(rand.Intn(20)) * time.Millisecond)
 	}
 	fmt.Println("Ended：Call 300 times.")
-	time.Sleep(3 * time.Second)
 	fmt.Println("debouncedFunc called times：" + strconv.Itoa(callTimes))
 }

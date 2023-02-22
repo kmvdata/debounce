@@ -4,7 +4,7 @@ import (
 	"time"
 )
 
-func debounce(delay time.Duration, f func()) func() {
+func Debounce(delay time.Duration, f func()) func() {
 	timer := time.NewTimer(delay)
 
 	return func() {
